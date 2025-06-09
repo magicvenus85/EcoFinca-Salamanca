@@ -126,7 +126,7 @@
             const formData = new FormData(formulario);
             const cliente = localStorage.getItem('isRegister')
 
-            if (cliente) {
+            if (!cliente) {
                 alert('Por favor inicie secion')
                 return
             }
@@ -138,6 +138,7 @@
 
             if (new Date() > new Date(formData.get('fecha'))){
                 alert('La fecha debe ser mayor a la fecha actual')
+                return
             }
 
             sedData(formData)
